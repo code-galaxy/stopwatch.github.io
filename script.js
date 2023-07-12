@@ -6,11 +6,6 @@ const minutesBlock = document.querySelector('.js-minutes'),
    outBlock = document.querySelector('.out'),
    outUl = document.querySelector('.out-ul');
 
-// outUlLapText = document.querySelector('.out-lap-text'),
-// outUlLapTime = document.querySelector('.out-lap-time');
-
-
-
 let interval;
 let minutes = 0;
 let seconds = 0;
@@ -52,7 +47,6 @@ const startTimer = () => {
    }
 }
 
-
 btnStart.addEventListener('click', () => {
    if (btnStart.innerHTML === 'Start') start();
    else stop();
@@ -73,12 +67,10 @@ function stop() {
    btnReset.innerHTML = 'Reset';
 }
 
-
 btnReset.addEventListener('click', () => {
    if (btnReset.innerHTML === 'Reset') reset();
    else lap();
 });
-
 
 function reset() {
    clearInterval(interval);
@@ -94,7 +86,6 @@ function reset() {
    clearLaps();
 };
 
-
 let count = 0;
 function lap() {
    let outLi = document.createElement('li');
@@ -109,7 +100,3 @@ function lap() {
 const clearLaps = () => {
    outUl.innerHTML = null;
 };
-
-
-
-
