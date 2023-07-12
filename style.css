@@ -28,16 +28,17 @@
    border-radius: 50px;
    margin: 50px 0 50px 316px;
    background-color: black;
+
 }
 
 .header {
    padding: 2px;
    grid-area: header;
-   height: 70px;
+   height: 100px;
    color: white;
-   display: flex;
-   justify-content: center;
-   align-items: flex-end;
+   margin-top: 15px;
+   align-self: flex-start;
+   text-align: center;
 }
 
 .time {
@@ -126,5 +127,14 @@ li {
 
 .active {
    background-color: darkred;
+   color: red;
+}
+.time-out{
+   margin: 5px 0;
+   font-size: 14px;
+}
+.name-out{
+   margin-top: 20px;
+   font-size: 25px;
    color: red;
 }

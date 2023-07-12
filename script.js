@@ -6,6 +6,7 @@ const minutesBlock = document.querySelector('.js-minutes'),
    outBlock = document.querySelector('.out'),
    outUl = document.querySelector('.out-ul');
 
+
 let interval;
 let minutes = 0;
 let seconds = 0;
@@ -47,6 +48,7 @@ const startTimer = () => {
    }
 }
 
+
 btnStart.addEventListener('click', () => {
    if (btnStart.innerHTML === 'Start') start();
    else stop();
@@ -67,10 +69,12 @@ function stop() {
    btnReset.innerHTML = 'Reset';
 }
 
+
 btnReset.addEventListener('click', () => {
    if (btnReset.innerHTML === 'Reset') reset();
    else lap();
 });
+
 
 function reset() {
    clearInterval(interval);
@@ -86,6 +90,7 @@ function reset() {
    clearLaps();
 };
 
+
 let count = 0;
 function lap() {
    let outLi = document.createElement('li');
@@ -100,3 +105,37 @@ function lap() {
 const clearLaps = () => {
    outUl.innerHTML = null;
 };
+
+// =========================================================================================
+
+const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
+function addLeadingZero(x) {
+   return (x < 10) ? '0' + x : x;
+}
+
+function getUserTime(t) {
+   let Y = t.getFullYear();
+   let M = addLeadingZero(t.getMonth() + 1);
+   let D = addLeadingZero(t.getDate());
+   let d = days[t.getDay()];
+   
+   console.log(Y, M, D, d);
+   document.querySelector('.date-info').innerHTML = `${Y}.${M}.${D} - ${d}`;
+}
+getUserTime(new Date(new Date()));
+// console.log(getUserTime(new Date()));
+
+// =========================================================================================
+
+window.onload = function () {
+   window.setInterval(() => {
+      let date = new Date();
+      let h = addLeadingZero(date.getHours());
+      let m = addLeadingZero(date.getMinutes());
+      let s = addLeadingZero(date.getSeconds());
+
+      let clock = `${h}:${m}:${s}`;
+      document.querySelector('.clock').innerHTML = clock;
+   })
+}
