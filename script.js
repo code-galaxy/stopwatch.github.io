@@ -139,3 +139,9 @@ window.onload = function () {
       document.querySelector('.clock').innerHTML = clock;
    })
 }
+
+//  Or another variant 
+// function tick() {
+//    document.querySelector('.clock').innerHTML =  new Date().toLocaleTimeString()
+//  }
+//  setInterval(tick, 1000);
